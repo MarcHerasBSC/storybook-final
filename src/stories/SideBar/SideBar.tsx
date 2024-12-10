@@ -23,8 +23,8 @@ export default function SideBar({setHelpCheck}:PropType) {
 
   return (
     <div className={`${styles.sidebarBg} ${minimizedBar ? styles.minimizedSideBar : ""}`}>
-      <Flex className={styles.logoContainer}>
-        <Image src={minimizedBar ? '/imgs/SmallVCityLogo.svg' : '/imgs/Logo_white3.svg'} alt='vCity' width={81} height={19} onPointerDown={handleMinimizeBar}/>
+      <Flex align='center' justify='center' className={styles.logoContainer}>
+        <Image src={minimizedBar ? '/imgs/SmallVCityLogo.svg' : '/imgs/Logo_white3.svg'} alt='vCity' width={ minimizedBar ? 40 : 81 } height={19} onPointerDown={handleMinimizeBar}/>
         <Text size={minimizedBar ? "1" : "2"}>Viladecans</Text>
       </Flex>
 

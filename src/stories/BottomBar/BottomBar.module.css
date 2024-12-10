@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: var(--bottom-bar-height);
+    height: max(var(--bottom-bar-height), 42px);
     width: auto;
     margin: 1.5rem;
     margin-top: 0;
