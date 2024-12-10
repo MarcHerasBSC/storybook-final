@@ -1,0 +1,57 @@
+.sidebarBg {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: var(--side-bar-width);
+    align-items: center;
+    padding: 1vw;
+    background-color: var(--vCity-primary-blue);
+    color: var(--foreground);
+}
+
+.minimizedSideBar{
+    width: var(--side-bar-minimized-width);
+    border-radius: 0 6px 6px 0;
+    box-shadow: 0 0 10px #131313A0;
+    z-index: 1;
+}
+
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    gap: 0.5rem;
+    color: white;
+}
+
+.customSeparator {
+    background-color: #FFFFFF90 !important;
+    height: 0.5px !important;
+}
+
+.customSideBarButton {
+    cursor: pointer !important;
+    height: 5vh !important;
+    padding-right: 0;
+} 
+
+.customNewSimulationButton {
+    cursor: pointer !important;
+    color: var(--vCity-primary-blue) !important;
+    height: 5vh !important;
+}
+
+.white {
+    border-color: white;
+    box-shadow: inset 0 0 0 1px white;
+    color: white;
+}
+
+.customSwitch::before {
+    box-shadow: inset 0 0 0 1px #c5c5d5 !important;
+}
+
+.customSwitch > span {
+    scale: 95%;
+}

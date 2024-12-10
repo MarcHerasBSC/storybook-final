@@ -1,0 +1,27 @@
+.dataPanelContainer {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: calc(var(--top-bar-height) + 1.5rem);
+    right: 2rem;
+    height: auto;
+    width: 28vw;
+    background-color: white;
+    border-radius: 1rem;
+    justify-content: space-between;
+}
+
+.saveRow {
+    width: 100%;
+    background-color: var(--vCity-primary-blue-20);
+    margin-left: 0;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.saveRow > button {
+    cursor: pointer;
+}

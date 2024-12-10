@@ -1,0 +1,45 @@
+.legendContainer {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    width: 33vw;
+    height: 15vh;
+    background-color: white;
+    color: var(--vCity-primary-blue);
+}
+
+.circleLegend {
+    margin: 0.2rem;
+    margin-right: -1rem;
+    margin-left: 0.5rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 100%;
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+.primaryBlue {
+    background-color: var(--vCity-primary-blue);
+}
+
+.aqua {
+    background-color: aqua;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.cornflower {
+    background-color: cornflowerblue;
+}
+
+.sky {
+    background-color: skyblue;
+}
+
+.slate {
+    background-color: silver;
+}

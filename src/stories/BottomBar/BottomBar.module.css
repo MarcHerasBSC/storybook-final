@@ -1,0 +1,33 @@
+.barContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--bottom-bar-height);
+    width: auto;
+    margin: 1.5rem;
+    margin-top: 0;
+    background-color: var(--vCity-primary-blue-10);
+    border-radius: 2.5vh;
+    color: var(--vCity-primary-blue);
+}
+
+.navButton {
+    display: flex;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    padding: 1rem;
+    gap: 0.5rem;
+    align-items: center;
+    height: 4vh;
+    border-radius: 2vh;
+}
+
+.navButton svg {
+    scale: 1.15;
+}
+
+.navButton:hover {
+    cursor: pointer;
+    background-color: var(--vCity-primary-blue-20);
+}

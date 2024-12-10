@@ -1,0 +1,84 @@
+.controlsBox {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: calc(12px + 2rem);
+    flex-grow: 0;
+    border-radius: 4px;
+    margin: 1rem;
+    padding: 6px;
+    gap: 6px;
+}
+
+.controlsIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 4px;
+    background-color: var(--vCity-primary-blue);
+    cursor: pointer;
+}
+
+.controlsIcon svg {
+    color: white;
+    scale: 1.15;
+}
+
+.zoomingControls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 20vh;
+    border-radius: 4px;
+    background-color: var(--vCity-primary-blue);
+}
+
+.sliderRoot {
+	position: relative;
+	display: flex;
+    flex-direction: column;
+	align-items: center;
+    -webkit-user-select: none;
+	user-select: none;
+	touch-action: none;
+	width: 100%;
+	height: 9vh;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.sliderTrack {
+	background-color: var(--black-a10);
+	position: relative;
+	flex-grow: 1;
+    
+	border-radius: 9999px;
+	width: 3px;
+}
+
+.sliderRange {
+	position: absolute;
+	background-color: white;
+	border-radius: 9999px;
+	height: 100%;
+}
+
+.sliderThumb {
+	display: block;
+	width: 10px;
+	height: 10px;
+	background-color: white;
+	box-shadow: 0 2px 5px var(--black-a7);
+	border-radius: 10px;
+}
+.sliderThumb:hover {
+	background-color: var(--violet-3);
+}
+.sliderThumb:focus {
+	outline: none;
+	box-shadow: 0 0 0 5px var(--black-a8);
+}

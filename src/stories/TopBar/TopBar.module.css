@@ -1,0 +1,12 @@
+.barContainer {
+    display: flex;
+    flex-direction: row;
+    height: var(--top-bar-height);
+    width: 100%;
+    background-color: white;
+    color: var(--vCity-primary-blue);
+    align-items: center;
+    padding-left: 1vw;
+    font-weight: 600;
+    border-bottom: 1px solid var(--vCity-primary-blue-20);
+}
