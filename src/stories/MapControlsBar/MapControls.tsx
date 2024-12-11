@@ -3,7 +3,8 @@ import styles from './MapControls.module.css'
 import "@radix-ui/themes/styles.css";
 import { Crosshair2Icon, ListBulletIcon, MagnifyingGlassIcon, MinusCircledIcon, PlusCircledIcon } from '@radix-ui/react-icons'
 import * as Slider from "@radix-ui/react-slider";
-import { Flex, IconButton, Separator } from '@radix-ui/themes';
+import { Flex, IconButton, Separator, TextField } from '@radix-ui/themes';
+import Legend from '../Legend/Legend';
 
 interface PropType {
   showLegend: boolean,
@@ -13,6 +14,7 @@ interface PropType {
 };
 
 export default function MapControls({showLegend, setLegend, valueControl, setValue}:PropType) {
+  const [showSearchBar, setSearchBar] = useState(false);
   const handleShowLegend = () => {
     setLegend(!showLegend);
   }
@@ -48,10 +50,21 @@ export default function MapControls({showLegend, setLegend, valueControl, setVal
     </Slider.Root>);
   }
 
+  function handleSearchBar(event: any): void {
+    setSearchBar(!showSearchBar);
+  }
+
+  function handleSearchBarPointerDown(event:any): void {
+    event.stopPropagation();
+  }
+
   return (
     <div className={styles.controlsBox}>
-      <IconButton color="blue">
+      <IconButton variant={showSearchBar ? "outline" : "solid"} color="blue" onPointerDown={handleSearchBar} className={styles.searchButton}>
           <MagnifyingGlassIcon width={18} height={18} />
+          {showSearchBar ? 
+          <TextField.Root placeholder="Buscar…" size='2' className={styles.searchBar} onPointerDown={handleSearchBarPointerDown}>
+          </TextField.Root> : null}
       </IconButton>
       <Flex direction="column" className={styles.zoomingControls}>
           <IconButton size="2" color="blue">
