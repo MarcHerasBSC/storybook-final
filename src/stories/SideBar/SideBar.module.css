@@ -9,11 +9,17 @@
     color: var(--foreground);
 }
 
-.minimizedSideBar{
+.minimizedSideBar {
     width: var(--side-bar-minimized-width);
     border-radius: 0 6px 6px 0;
     box-shadow: 0 0 10px #131313A0;
     z-index: 1;
+}
+
+.barMinimizer {
+    position: absolute !important;
+    top: 7.5% !important;
+    width: 1.75rem !important;
 }
 
 .logoContainer {

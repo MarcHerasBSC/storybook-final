@@ -3,8 +3,8 @@ import React, { Dispatch, SetStateAction, useState } from 'react'
 import styles from './SideBar.module.css'
 import "@radix-ui/themes/styles.css";
 import Image from 'next/image'
-import { Button, Flex, IconButton, Separator, Switch, Text } from '@radix-ui/themes'
-import { ListBulletIcon, PersonIcon, PlusIcon, QuestionMarkCircledIcon } from '@radix-ui/react-icons';
+import { Box, Button, Flex, IconButton, Separator, Switch, Text } from '@radix-ui/themes'
+import { DoubleArrowLeftIcon, DoubleArrowRightIcon, ListBulletIcon, PersonIcon, PlusIcon, QuestionMarkCircledIcon } from '@radix-ui/react-icons';
 
 interface PropType {
   setHelpCheck: Dispatch<SetStateAction<boolean>>
@@ -23,8 +23,14 @@ export default function SideBar({setHelpCheck}:PropType) {
 
   return (
     <div className={`${styles.sidebarBg} ${minimizedBar ? styles.minimizedSideBar : ""}`}>
+      <IconButton 
+        onPointerDown={handleMinimizeBar} 
+        className={styles.barMinimizer}
+        style={{ left: minimizedBar ? 'calc(var(--side-bar-minimized-width) - 1rem)' : 'calc(var(--side-bar-width) - 1rem)' }}>
+          {minimizedBar ? <DoubleArrowRightIcon/> : <DoubleArrowLeftIcon/>}
+      </IconButton>
       <Flex align='center' justify='center' className={styles.logoContainer}>
-        <Image src={minimizedBar ? '/imgs/SmallVCityLogo.svg' : '/imgs/Logo_white3.svg'} alt='vCity' width={ minimizedBar ? 40 : 81 } height={19} onPointerDown={handleMinimizeBar}/>
+        <Image src={minimizedBar ? '/imgs/SmallVCityLogo.svg' : '/imgs/Logo_white3.svg'} alt='vCity' width={ minimizedBar ? 40 : 81 } height={19}/>
         <Text size={minimizedBar ? "1" : "2"}>Viladecans</Text>
       </Flex>
 
