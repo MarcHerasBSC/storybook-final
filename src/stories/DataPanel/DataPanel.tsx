@@ -4,11 +4,18 @@ import { Box, Button, CheckboxGroup, Dialog, Flex, IconButton, Select, Separator
 import Image from 'next/image'
 import { BarChartIcon, DownloadIcon, EyeOpenIcon, GlobeIcon, LayersIcon, LockClosedIcon, LockOpen1Icon, Pencil1Icon, PlusIcon } from '@radix-ui/react-icons'
 
+interface LayerType {
+  id: number,
+  name: string
+};
+
 interface PropType {
+  layers: LayerType[],
   setCheckboxGroupValue: Dispatch<SetStateAction<string[]>>
 }
 
-export default function DataPanel({setCheckboxGroupValue}:PropType) {
+export default function DataPanel({layers, setCheckboxGroupValue}:PropType) {
+  const nCapas = layers.length;
   const handlePointerDownOutside = (event:any) => { event.preventDefault(); };
 
   function handleValueChange(value: string[]): void {
@@ -17,7 +24,7 @@ export default function DataPanel({setCheckboxGroupValue}:PropType) {
 
   return (
     <div className={styles.dataPanelContainer}>
-      <Tabs.Root defaultValue="impacto">
+      <Tabs.Root defaultValue="capas">
         <Tabs.List justify="center">
           <Tabs.Trigger value="impacto" style={{width:'50%'}}>
             <BarChartIcon color="var(--vCity-primary-blue)" width={14} height={14}/>
@@ -39,27 +46,17 @@ export default function DataPanel({setCheckboxGroupValue}:PropType) {
           <Tabs.Content value="capas">
             <Flex direction="column" mx="6" mt="3" mb="6">
             <CheckboxGroup.Root defaultValue={["1"]} name="example" onValueChange={handleValueChange}>
-              <CheckboxGroup.Item value="1">
-                <Flex gap="1"><Text mr="3" color="blue">Edificios</Text><EyeOpenIcon/><Pencil1Icon/><DownloadIcon/></Flex>
-                <Text size="1" color="gray">3 edits</Text>
-              </CheckboxGroup.Item>
-              <Separator size="4" my="3"/>
-              <CheckboxGroup.Item value="2">
-                <Flex gap="1"><Text mr="3" color="blue">Calles</Text><EyeOpenIcon/><Pencil1Icon/><DownloadIcon/></Flex>
-                <Text size="1" color="gray">0 edits</Text>
-              </CheckboxGroup.Item>
-              <Separator size="4" my="3"/>
-              <CheckboxGroup.Item value="3">
-                <Flex gap="1"><Text mr="3" color="blue">Carriles</Text><EyeOpenIcon/><Pencil1Icon/><DownloadIcon/></Flex>
-                <Text size="1" color="gray">0 edits</Text>
-              </CheckboxGroup.Item>
-              <Separator size="4" my="3"/>
-              <CheckboxGroup.Item value="4">
-                <Flex gap="1"><Text mr="3" color="blue">Carreteras</Text><EyeOpenIcon/><Pencil1Icon/><DownloadIcon/></Flex>
-                <Text size="1" color="gray">2 edits</Text>
-              </CheckboxGroup.Item>
-              <Separator size="4" my="3"/>
-              <CheckboxGroup.Item value="5">
+              {layers.map((layer, i) => {
+                return(
+                <Flex direction="column" key={"checkbox-item-"+i}>
+                  <CheckboxGroup.Item value={(i+1).toString()}>
+                    <Flex gap="1"><Text mr="3" color="blue">{layer.name}</Text><EyeOpenIcon/><Pencil1Icon/><DownloadIcon/></Flex>
+                    <Text size="1" color="gray">{layer.name.length} edits</Text>
+                  </CheckboxGroup.Item>
+                  <Separator size="4" my="3"/>
+                </Flex>
+              )})}
+              <CheckboxGroup.Item value={(nCapas+1).toString()}>
                 <Flex gap="1"><Text mr="3" color="blue">Añadir capa</Text><EyeOpenIcon/><Pencil1Icon/><DownloadIcon/></Flex>
               </CheckboxGroup.Item>
             </CheckboxGroup.Root>
