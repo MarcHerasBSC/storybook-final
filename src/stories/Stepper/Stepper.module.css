@@ -1,0 +1,6 @@
+.stepperBg {
+    background-color: #EEF0F2 !important;
+    border-radius: 2rem !important;
+    height: 5vh !important;
+    width: max(450px, 30vw) !important;
+}

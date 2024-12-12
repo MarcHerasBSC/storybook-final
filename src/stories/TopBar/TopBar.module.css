@@ -10,3 +10,35 @@
     font-weight: 600;
     border-bottom: 1px solid var(--vCity-primary-blue-20);
 }
+
+.useCaseTag {
+    border: 1px solid var(--vCity-primary-blue-20);
+    border-radius: 0.75rem;
+    height: 1.5rem;
+}
+
+.scenarioTitle {
+    width: 18vw !important;
+    height: 1.2rem !important;
+    box-shadow: none !important;
+    border-bottom: 1px var(--vCity-primary-blue-20) solid !important;
+    border-radius: 0 !important;
+}
+
+@supports selector(:has(*)){
+    .scenarioTitle:where(:has(*:focus)) {
+    border-bottom: 2px var(--vCity-primary-blue) solid !important;
+    outline: 0px solid transparent !important;
+}}
+
+.rt-TextFieldRoot:where(.rt-variant-surface) {
+    color: transparent;
+}
+
+.scenarioTitle > input {
+    color: var(--vCity-primary-blue);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: -12px;
+    margin-top: -12px;
+}
