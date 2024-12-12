@@ -69,8 +69,8 @@
 
 .sliderThumb {
 	display: block;
-	width: 10px;
-	height: 10px;
+	width: 20px;
+	height: 20px;
 	background-color: white;
 	box-shadow: 0 2px 5px var(--black-a7);
 	border-radius: 10px;
@@ -93,4 +93,15 @@
     position: absolute !important;
     left: 3rem !important;
     width: 12rem !important;
+    opacity: 100%;
+    transition: width 250ms ease-out, opacity 250ms ease-out;
+}
+
+.hiddenSearchBar {
+    position: absolute !important;
+    left: 3rem !important;
+    width: 1px !important;
+    opacity: 0%;
+    pointer-events: none;
+    transition: width 250ms ease-out, opacity 250ms ease-in;
 }

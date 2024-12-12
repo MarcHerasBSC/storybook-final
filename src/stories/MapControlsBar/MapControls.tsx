@@ -3,8 +3,10 @@ import styles from './MapControls.module.css'
 import "@radix-ui/themes/styles.css";
 import { Crosshair2Icon, ListBulletIcon, MagnifyingGlassIcon, MinusCircledIcon, PlusCircledIcon } from '@radix-ui/react-icons'
 import * as Slider from "@radix-ui/react-slider";
-import { Flex, IconButton, Separator, TextField } from '@radix-ui/themes';
-import Legend from '../Legend/Legend';
+import { Flex, IconButton, Separator, TextField, Text } from '@radix-ui/themes';
+
+const RANGE = 20;
+const STEP = 1;
 
 interface PropType {
   showLegend: boolean,
@@ -24,12 +26,12 @@ export default function MapControls({showLegend, setLegend, valueControl, setVal
   }
 
   function increaseValue(): void {
-    if(valueControl[0] < 95) setValue([valueControl[0]+5]);
-    else setValue([100]);
+    if(valueControl[0] < RANGE-STEP) setValue([valueControl[0]+STEP]);
+    else setValue([RANGE]);
   }
 
   function decreaseValue(): void {
-    if(valueControl[0] > 5) setValue([valueControl[0]-5]);
+    if(valueControl[0] > STEP) setValue([valueControl[0]-STEP]);
     else setValue([0]);
   }
 
@@ -38,15 +40,19 @@ export default function MapControls({showLegend, setLegend, valueControl, setVal
     <Slider.Root 
         className={styles.sliderRoot} 
         value={valueControl} 
-        defaultValue={[50]} 
-        max={100} 
-        step={5} 
+        defaultValue={[RANGE/2]} 
+        max={RANGE} 
+        step={STEP} 
         orientation="vertical"
         onValueChange={handleValueChange}>
         <Slider.Track className={styles.sliderTrack}>
             <Slider.Range className={styles.sliderRange} />
         </Slider.Track>
-        <Slider.Thumb className={styles.sliderThumb} aria-label="Zoom"/>
+        <Slider.Thumb className={styles.sliderThumb} aria-label="Zoom">
+          <Flex justify="center" align="center" height={"20px"} width={"20px"}>
+            <Text size="1" color='blue' align="center" weight="medium">{valueControl}</Text>
+          </Flex>
+        </Slider.Thumb>
     </Slider.Root>);
   }
 
@@ -62,9 +68,8 @@ export default function MapControls({showLegend, setLegend, valueControl, setVal
     <div className={styles.controlsBox}>
       <IconButton variant={showSearchBar ? "outline" : "solid"} color="blue" onPointerDown={handleSearchBar} className={styles.searchButton}>
           <MagnifyingGlassIcon width={18} height={18} />
-          {showSearchBar ? 
-          <TextField.Root placeholder="Buscar…" size='2' className={styles.searchBar} onPointerDown={handleSearchBarPointerDown}>
-          </TextField.Root> : null}
+          <TextField.Root disabled={!showSearchBar} placeholder="Buscar…" size='2' className={showSearchBar ? styles.searchBar : styles.hiddenSearchBar} onPointerDown={handleSearchBarPointerDown}>
+          </TextField.Root>
       </IconButton>
       <Flex direction="column" className={styles.zoomingControls}>
           <IconButton size="2" color="blue">
