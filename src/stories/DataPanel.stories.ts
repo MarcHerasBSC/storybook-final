@@ -20,5 +20,10 @@ const meta = {
   export default meta;
   type Story = StoryObj<typeof meta>;
 
-export const DataPanelDefault: Story = {};
+export const DataPanelDefault: Story = {
+  args: {
+    layers: [{id: 0, name:"Edificios"}, {id: 1, name:"Calles"}, {id: 2, name:"Carriles"}, {id: 3, name:"Carreteras"}],
+    setCheckboxGroupValue: fn()
+  }
+};
 

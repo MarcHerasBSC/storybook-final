@@ -26,14 +26,14 @@ const meta = {
 export const MapControlsDefault: Story = {
   args: {
     showLegend: false,
-    valueControl: [50]
+    valueControl: [10]
   }
 };
 
 export const MapControlsLegend: Story = {
   args: {
     showLegend: true,
-    valueControl: [50]
+    valueControl: [10]
   }
 };
 
@@ -47,7 +47,7 @@ export const MapControlsMinValue: Story = {
 export const MapControlsMaxValue: Story = {
   args: {
     showLegend: false,
-    valueControl: [100]
+    valueControl: [20]
   }
 };
 

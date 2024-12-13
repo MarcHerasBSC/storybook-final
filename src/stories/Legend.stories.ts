@@ -16,5 +16,15 @@ const meta = {
   export default meta;
   type Story = StoryObj<typeof meta>;
 
-export const LegendDefault: Story = {};
+export const LegendDefault: Story = {
+  args: {
+    hidden: false
+  }
+};
+
+export const LegendHidden: Story = {
+  args: {
+    hidden: true
+  }
+};
 
