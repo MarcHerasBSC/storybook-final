@@ -19,6 +19,7 @@
     color: var(--vCity-primary-blue);
     opacity: 0%;
     z-index: 0;
+    pointer-events: none;
     transition: margin-left 300ms ease-out, opacity 250ms ease-out;
 }
 

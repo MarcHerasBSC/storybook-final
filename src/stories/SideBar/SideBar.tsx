@@ -26,7 +26,7 @@ export default function SideBar({setHelpCheck}:PropType) {
       <IconButton 
         onPointerDown={handleMinimizeBar} 
         className={styles.barMinimizer}
-        style={{ left: minimizedBar ? 'calc(var(--side-bar-minimized-width) - 1rem)' : 'calc(var(--side-bar-width) - 1rem)' }}>
+        style={{ left: minimizedBar ? 'calc(var(--side-bar-minimized-width) - 1rem)' : 'calc(var(--side-bar-width) - 1rem)', transition: "left 200ms" }}>
           {minimizedBar ? <DoubleArrowRightIcon/> : <DoubleArrowLeftIcon/>}
       </IconButton>
       <Flex align='center' justify='center' className={styles.logoContainer}>
