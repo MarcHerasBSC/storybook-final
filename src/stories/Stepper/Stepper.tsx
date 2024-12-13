@@ -24,7 +24,7 @@ export default function Stepper({steps, currentStep}: PropType) {
             <IconButton variant={step.id+1 > currentStep ? "outline" : step.id+1 === currentStep ? "solid" : "soft"} radius="full" color="blue" size="3">
               {step.id+1 < currentStep ? <CheckIcon width={20} height={20}/> : <Text size="3" weight="bold">{step.id+1}</Text>}
             </IconButton>
-            <Text size="3" weight={step.id+1 === currentStep ? "bold" : "regular"}>{step.name}</Text>
+            <Text size="2" weight={step.id+1 === currentStep ? "bold" : "regular"}>{step.name}</Text>
           </Flex>
         </Flex>
         )})

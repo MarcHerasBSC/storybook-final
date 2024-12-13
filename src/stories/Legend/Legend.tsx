@@ -2,7 +2,11 @@ import { Flex, Text } from '@radix-ui/themes'
 import React from 'react'
 import styles from './Legend.module.css'
 
-export default function Legend() {
+interface PropType {
+    hidden: boolean
+}
+
+export default function Legend({hidden}: PropType) {
   interface PropType {
     color: string;
   }
@@ -12,7 +16,7 @@ export default function Legend() {
     );
   }
   return (
-    <Flex display="flex" direction="row" justify="between" align="center" my="3" gap="4" className={styles.legendContainer}>
+    <Flex display="flex" direction="row" justify="between" align="center" my="3" gap="4" className={hidden ? styles.hiddenLegend : styles.legendContainer}>
         <Flex display="flex" direction="column" gap="0" ml="6">
             <Flex direction="row" gap="2" align="center" justify="start" my="1">
                 <CircleLegend color="transparent"/>

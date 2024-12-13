@@ -7,12 +7,12 @@
     padding: 1vw;
     background-color: var(--vCity-primary-blue);
     color: var(--foreground);
+    z-index: 1;
 }
 
 .minimizedSideBar {
     width: var(--side-bar-minimized-width);
     border-radius: 0 6px 6px 0;
-    box-shadow: 0 0 10px #131313A0;
     z-index: 1;
 }
 

@@ -5,6 +5,21 @@
     height: 15vh;
     background-color: white;
     color: var(--vCity-primary-blue);
+    opacity: 100%;
+    z-index: 0;
+    transition: margin-left 300ms ease-out, opacity 250ms ease-out;
+}
+
+.hiddenLegend {
+    margin-left: -15rem;
+    margin-bottom: 1rem;
+    width: 33vw;
+    height: 15vh;
+    background-color: white;
+    color: var(--vCity-primary-blue);
+    opacity: 0%;
+    z-index: 0;
+    transition: margin-left 300ms ease-out, opacity 250ms ease-out;
 }
 
 .circleLegend {

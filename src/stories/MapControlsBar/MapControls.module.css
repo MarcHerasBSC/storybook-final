@@ -100,7 +100,7 @@
 .hiddenSearchBar {
     position: absolute !important;
     left: 3rem !important;
-    width: 1px !important;
+    width: 0px !important;
     opacity: 0%;
     pointer-events: none;
     transition: width 250ms ease-out, opacity 250ms ease-in;
