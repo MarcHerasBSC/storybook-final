@@ -27,3 +27,10 @@ export const DataPanelDefault: Story = {
   }
 };
 
+export const DataPanel2MoreLayers: Story = {
+  args: {
+    layers: [{id: 0, name:"Edificios"}, {id: 1, name:"Calles"}, {id: 2, name:"Carriles"}, {id: 3, name:"Carreteras"}, {id: 4, name:"Extra Layer 1"}, {id: 5, name:"Extra Layer 2"}],
+    setCheckboxGroupValue: fn()
+  }
+};
+

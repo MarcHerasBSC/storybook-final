@@ -16,5 +16,43 @@ const meta = {
   export default meta;
   type Story = StoryObj<typeof meta>;
 
-export const TopBarDefault: Story = {};
+export const TopBarDefault: Story = {
+  args: {
+    useCase: "Ciclabilidad",
+    pages: [{id: 0, name:"Análisis"}, {id: 1, name:"Estrategia"}, {id: 2, name:"Escenario"}],
+    currentPageIndex: 3
+  }
+};
+
+export const TopBarFirstPage: Story = {
+  args: {
+    useCase: "Ciclabilidad",
+    pages: [{id: 0, name:"Análisis"}, {id: 1, name:"Estrategia"}, {id: 2, name:"Escenario"}],
+    currentPageIndex: 1
+  }
+};
+
+export const TopBarSecondPage: Story = {
+  args: {
+    useCase: "Ciclabilidad",
+    pages: [{id: 0, name:"Análisis"}, {id: 1, name:"Estrategia"}, {id: 2, name:"Escenario"}],
+    currentPageIndex: 2
+  }
+};
+
+export const TopBarTwoPages: Story = {
+  args: {
+    useCase: "Ciclabilidad",
+    pages: [{id: 0, name:"Análisis"}, {id: 2, name:"Escenario"}],
+    currentPageIndex: 1
+  }
+};
+
+export const TopBarDifferentUseCase: Story = {
+  args: {
+    useCase: "Caso de Uso 2",
+    pages: [{id: 0, name:"Análisis"}, {id: 1, name:"Estrategia"}, {id: 2, name:"Escenario"}],
+    currentPageIndex: 2
+  }
+};
 
